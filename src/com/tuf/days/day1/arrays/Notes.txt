@@ -4,3 +4,4 @@ Day 1
 Problem - Given a 2D matrix that has a single element with value 0 set all the elements in the same row and column to 0.
 2] Pascals Triangle
 3] Find Next Greater Permutation - Same as https://leetcode.com/problems/next-greater-element-iii/
+4] Kadane's Algorithm - Maximum sum subarray in an array.
