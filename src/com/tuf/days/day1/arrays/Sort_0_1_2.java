@@ -36,6 +36,9 @@ public class Sort_0_1_2 {
         }
     }
 
+    // Optimized approach since this is done in just a single pass.
+    // Time Complexity - O(N)
+    // Space Complexity - O(1)
     private static void optimized_dutch_national_flag(int[] nums){
         int lo = 0, mid = 0, hi = nums.length - 1;
         while(mid <= hi){
