@@ -72,7 +72,12 @@ public class Set_Matrix_Zeros {
         }
     }
 
-    private static void setZeroes_SE(int[][] matrix) {
+    // Here we use 0th column and 0th row of selected cell to be 0. In this case we need to handle the cell 0,0 separately. This can be handled by handling row 0 separately or column 0 separately using a single variable.
+    // So we check if the 0th column of the row is zero then mark the variable col0 as 0.
+    // Otherwise when we get matrix[i][j] == 0 then we mark [0][j] and [i][0] with 0.
+    // Since we are starting from the top left corner for us to not consider the marked zeros as original zeros we will have to start iterating from bottom right corcer i.e. [m-1][n-1]
+    // Time Complexity (n*m), Space complexity O(1).
+     private static void setZeroes_SE(int[][] matrix) {
         int col0 = 1, rows = matrix.length, cols = matrix[0].length;
 
         for (int i = 0; i < rows; i++) {
