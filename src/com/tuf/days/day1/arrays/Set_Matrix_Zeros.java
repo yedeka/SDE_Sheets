@@ -45,6 +45,35 @@ public class Set_Matrix_Zeros {
         }
 
     }
+    // Non brute force way of working where we take 2 dummy arrays and just set the index of row and element in the corresponding arrays as true upon encountering zero.
+    // This saves us from the additional looping logic of goung back and forth and we can set the elements as zeros in the next pass.
+    // Time complexity - O(n*m)
+    private static void nonBruteForceLogic(int[][] matrix){
+        int rows = matrix.length, cols = matrix[0].length;
+        boolean[] zeroRow = new boolean[rows];
+        boolean[] zeroCol = new boolean[cols];
+
+        for(int i=0; i<rows; i++){
+            for(int j=0; j<cols; j++){
+                if(matrix[i][j] == 0){
+                    // Flag the row and column index in the dummy array to be marked as zero later.
+                    zeroRow[i] = true;
+                    zeroCol[j] = true;
+                }
+            }
+        }
+        // Run the loop over matrix and refer to dummy array to mark the corresponding row and column as zero.
+        for(int i=0; i<rows;i++){
+            for(int j=0; j<cols; j++){
+                if(zeroRow[i] || zeroCol[j]){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+
+
+    }
+
     private static void printMatrix(int[][] matrix){
         for(int i=0; i<matrix.length; i++){
             for(int j=0; j<matrix[0].length; j++){
@@ -59,7 +88,8 @@ public class Set_Matrix_Zeros {
                 {1, 0, 1},
                 {1, 1, 1}
         };
-        setMatrixZeros_Brute_Force(matrix);
+        //setMatrixZeros_Brute_Force(matrix);
+        nonBruteForceLogic(matrix);
         printMatrix(matrix);
 
     }
