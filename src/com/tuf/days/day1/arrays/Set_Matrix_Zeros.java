@@ -110,6 +110,7 @@ public class Set_Matrix_Zeros {
                 {1, 1, 1}
         };
         matrix = new int[][]{{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+        matrix = new int[][]{{-4,-2147483648,6,-7,0}, {-8,6,-8,-6,0},{2147483647,2,-9,-6,-10}};
         //setMatrixZeros_Brute_Force(matrix);
         // nonBruteForceLogic(matrix);
         setZeroes_SE(matrix);
