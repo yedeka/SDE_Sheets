@@ -2,3 +2,4 @@ Day 1
 -----
 1] Set Matrix Zeros (LC73 - https://leetcode.com/problems/set-matrix-zeroes/)
 Problem - Given a 2D matrix that has a single element with value 0 set all the elements in the same row and column to 0.
+2] Pascals Triangle
