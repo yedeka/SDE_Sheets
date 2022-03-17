@@ -6,6 +6,7 @@ public class Next_Greater_Permutation {
         for(int i = num.length - 2; i>=0; i--){
             if(num[i]<num[i+1]){
                 index = i;
+                break;
             }
         }
         return index;
@@ -42,12 +43,15 @@ public class Next_Greater_Permutation {
         num[swapindex] = smallerNumber;
         // Step 4 - Reverse the array from ceilIndex + 1
         reverseArray(num, ceilIndex+1);
+        } else {// Simply reverse the entire list and give
+            reverseArray(num, 0);
         }
         return num;
     }
     public static void main(String[] args){
-        int[] number = new int[]{1, 3, 2};
-        number = new int[]{4, 5, 2, 8, 7, 6, 4, 1};
+        int[] number = new int[]{1, 2, 3};
+        // number = new int[]{4, 5, 2, 8, 7, 6, 4, 1};
+        // number = new int[]{2, 3, 1, 4, 5};
         int[] permutation = nextGreaterPermutation(number);
         for(int element: permutation){
             System.out.print(element+" ");
