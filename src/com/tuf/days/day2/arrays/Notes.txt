@@ -1,2 +1,4 @@
 1] Rotate Image.
 2] Merge Intervals
+3] Merge Sorted Arrays - new range technique.
+4] Find duplicate in array of integers.
