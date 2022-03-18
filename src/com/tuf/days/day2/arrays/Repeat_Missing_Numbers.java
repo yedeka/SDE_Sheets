@@ -40,6 +40,45 @@ public class Repeat_Missing_Numbers {
         return result;
     }
 
+    private static int[] usingBitWise(int[] nums){
+        int xor1;
+        int set_bit_no;
+
+        //Step 1 - take XOR of array elements with each other.
+        xor1 = nums[0];
+        for(int i=1; i<nums.length; i++){
+            xor1 = xor1 ^ nums[i];
+        }
+        // Step 2 - Now take XOR of 1 to N with the answer of step 1
+        for(int i=1; i<=nums.length; i++){
+            xor1 = xor1 ^ i;
+        }
+        // Step 3 - This answer has XOR of missing number and repeating number.
+        // Now set the rightmost XOR bit
+        set_bit_no = xor1 & ~(xor1 - 1);
+        // Step 4 - Now divide the array numbers into 2 sets with rightmost set bit as 1 and 0
+        int x=0, y = 0;
+        for(int i=0; i<nums.length; i++){
+            if((nums[i] & set_bit_no) != 1){
+                x = x ^ nums[i]; // we take XOR here itself since we need it in future for
+            }
+            else {
+                y = y ^ nums[i]; // we take XOR here itself since we need it in future for
+            }
+        }
+        // Step 5 - Now take XOR of the two numbers with matching numbers from 1...N
+        for(int i=1; i<=nums.length; i++){
+            if((i & set_bit_no) != 1){
+                x = x ^ i; // we take XOR here itself since we need it in future for
+            }
+            else {
+                y = y ^ i; // we take XOR here itself since we need it in future for
+            }
+        }
+
+        return new int[]{x, y};
+    }
+
 
 
     public static void main(String[] args){
@@ -49,6 +88,7 @@ public class Repeat_Missing_Numbers {
         System.out.println(result[0]+", "+result[1]);
         result = usingSeries(nums);
         System.out.println(result[0]+", "+result[1]);
-
+        result = usingBitWise(nums);
+        System.out.println(result[0]+", "+result[1]);
     }
 }
