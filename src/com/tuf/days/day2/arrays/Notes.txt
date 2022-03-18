@@ -3,3 +3,4 @@
 3] Merge Sorted Arrays - new range technique.
 4] Find duplicate in array of integers.
 5] Repeat and missing numbers - Very tricky problem with multiple solutions most of them involving maths.
+6] Inversion of array - Merge sort related algorithm. Covered is searching and sorting in Sumeet Malik's lessons. Classic application of merge sort.
