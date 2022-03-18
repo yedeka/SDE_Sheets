@@ -1,5 +1,7 @@
 package com.tuf.days.day2.arrays;
 
+import java.util.ArrayList;
+
 public class Rotate_Image {
     // Brute force way of rotating by creating a dummy matrix.
     // TC -> O(N*N)
@@ -63,4 +65,5 @@ public class Rotate_Image {
         optimizedInPlace(matrix);
         printMatrix(matrix);
     }
+
 }
