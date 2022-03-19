@@ -45,6 +45,7 @@ public class Majority_Element_II {
     }
     public static void main(String[] args){
         int[] nums = new int[]{11,33,33,11,33,11};
+        nums = new int[]{8, 3, 4, 8, 3, 2, 1, 9};
         int[] majorityElements = findMajortyElements(nums);
         System.out.println(majorityElements[0]+", "+majorityElements[1]);
     }
