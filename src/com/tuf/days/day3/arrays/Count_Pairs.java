@@ -31,7 +31,8 @@ public class Count_Pairs {
         // here and then merge.
         int j = 0;
         for(int i=0; i<left.length; i++){
-            while(j < right.length && left[i] >= 2 * right[j]){
+
+            while(j < right.length  && right[j] < (Integer.MAX_VALUE / 2) && left[i] >= 2 * right[j]){
                 j++;
             }
             result[0] += j;
@@ -47,6 +48,7 @@ public class Count_Pairs {
     }
     public static void main(String[] args){
         int[] nums = new int[]{1,3,2,3,1};
+        //nums = new int[]{2147483647,2147483647,2147483647,2147483647,2147483647,2147483647};
         System.out.println("Pair Count => "+countPairs(nums));
     }
 }
