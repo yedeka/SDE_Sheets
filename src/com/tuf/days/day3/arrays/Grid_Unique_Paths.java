@@ -44,7 +44,7 @@ public class Grid_Unique_Paths {
         double res = 1;
 
         for(int i=1; i<=r; i++){
-            res *= (N-r+i)/i;
+            res = res * (N-r+i)/i;
         }
         return (int)res;
     }
@@ -55,6 +55,6 @@ public class Grid_Unique_Paths {
         int[][] dp = new int[m][n];
         Arrays.stream(dp).forEach(arr -> Arrays.fill(arr, -1));
         System.out.println("DP unique paths => "+findUniquePathsDP(0, 0, m, n, dp));
-        System.out.println("Combinatrics unique paths => "+findUniquePaths_Combinatrics(m, n));
+        System.out.println("Combinatrics unique paths => "+findUniquePaths_Combinatrics(3, 2));
     }
 }
