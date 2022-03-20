@@ -1,3 +1,6 @@
 1] Search in a sorted 2D matrix - Use binary search on flattened matrix. convert a cell back to row, column using formula.
 2] Power (X, N) - Check for this iterative solution.
 3] Majority element - The element that occurs in the array N/2 times. Use Moore's algorithm.
+4] Majority Element - The pair of elements that come in the array N/3 times.
+5] Grid Unique Paths
+6]
