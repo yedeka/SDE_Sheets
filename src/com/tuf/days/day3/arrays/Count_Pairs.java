@@ -27,6 +27,8 @@ public class Count_Pairs {
         int[] left = mergeSort(lo, mid, nums, result);
         int[] right = mergeSort(mid+1, hi, nums, result);
         // Reverse pairs logic
+        // We apply it here because we get the previous level left and right subarrays which are sorted so we apply the reverse pair counting
+        // here and then merge.
         int j = 0;
         for(int i=0; i<left.length; i++){
             while(j < right.length && left[i] >= 2 * right[j]){

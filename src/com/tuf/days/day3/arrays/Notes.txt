@@ -3,4 +3,4 @@
 3] Majority element - The element that occurs in the array N/2 times. Use Moore's algorithm.
 4] Majority Element - The pair of elements that come in the array N/3 times.
 5] Grid Unique Paths
-6]
+6] Reverse pairs
