@@ -1,0 +1,7 @@
+1] 2 sum
+2] 4 sum
+3] Longest consecutive sequence in an array - Can be done in 3 ways
+Brute force O(N^2) solution.
+Make a set and check in the set for each element.
+Use the formula (max-min) = i - j
+Basically iterate over the array to find out min and max and the moment you have max - min = gap of indices we will have all the elements.
