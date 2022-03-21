@@ -5,3 +5,10 @@ Brute force O(N^2) solution.
 Make a set and check in the set for each element.
 Use the formula (max-min) = i - j
 Basically iterate over the array to find out min and max and the moment you have max - min = gap of indices we will have all the elements.
+4] Length of longest subarray with 0 sum -
+Brute Force appraoch -
+This can be done in O(n^2) ways by running a nested for loop of i = 0..n-2 amnd j = i+1...n-1 and checking for every possible subarray.
+Optimal Solution -
+Whilre iterating through array calculate the prefix sum of the array.
+The index at which prefix sum gets repeated is the subarray of zero sum.
+Intution - prefix repeating at an index indicates that the sum of middle elements of subarray is cancelling itself.
