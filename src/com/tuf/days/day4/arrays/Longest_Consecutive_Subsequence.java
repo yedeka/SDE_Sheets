@@ -57,7 +57,7 @@ public class Longest_Consecutive_Subsequence {
     }
 
     public static void main(String[] args){
-        int[] nums = new int[]{100, 200, 1, 3, 1, 2, 4};
+        int[] nums = new int[]{100, 200, 4, 3, 1, 2, 4};
         System.out.println("Length of longest consecutive subsequence => "+twoLoopsApproach(nums));
         System.out.println("Length of longest consecutive subsequence => "+hashSetBasedApproach(nums));
     }
