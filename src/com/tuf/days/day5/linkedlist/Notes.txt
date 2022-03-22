@@ -1,2 +1,3 @@
 1] Reversing a linked list - Remeber to start with prev = null and current = head.
 2] Find middle of the linked list - Use slow and fast pointer strategy and return the slow pointer.
+3] Merge two sorted lists
