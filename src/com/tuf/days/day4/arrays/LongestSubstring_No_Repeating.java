@@ -44,6 +44,7 @@ public class LongestSubstring_No_Repeating {
     }
     public static void main(String[] args){
         String strInput = "abcaabcdba";
+        strInput = "ababcdede";
         System.out.println("Better Approach longest length => "+findLongestNoRepeat(strInput));
         System.out.println("Optimal Approach longest length => "+optimalLongestNoRepeat(strInput));
     }
