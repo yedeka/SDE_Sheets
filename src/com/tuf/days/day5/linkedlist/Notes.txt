@@ -3,3 +3,5 @@
 3] Merge two sorted lists.
 4] Remove Nth node from end of the linked list - Use 2 pointer approach by increasing one pointer by N.
 Then run both the pointers by one counter and when the pointer that is ahead becomes null remove the node pointed by the behind pointer.
+5] Add numbers as linked list - Reverse addition of numbers as linked list. Important thing to remember here since we have carry that needs to be added
+We will add with (head1!= null || head2!= null || carry== 1)
