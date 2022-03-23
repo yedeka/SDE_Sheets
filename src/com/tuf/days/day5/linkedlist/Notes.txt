@@ -1,4 +1,5 @@
 1] Reversing a linked list - Remeber to start with prev = null and current = head.
 2] Find middle of the linked list - Use slow and fast pointer strategy and return the slow pointer.
-3] Merge two sorted lists
-4]
+3] Merge two sorted lists.
+4] Remove Nth node from end of the linked list - Use 2 pointer approach by increasing one pointer by N.
+Then run both the pointers by one counter and when the pointer that is ahead becomes null remove the node pointed by the behind pointer.
