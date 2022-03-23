@@ -5,3 +5,5 @@
 Then run both the pointers by one counter and when the pointer that is ahead becomes null remove the node pointed by the behind pointer.
 5] Add numbers as linked list - Reverse addition of numbers as linked list. Important thing to remember here since we have carry that needs to be added
 We will add with (head1!= null || head2!= null || carry== 1)
+6] Delete a node of the linked list when the node to be deleted is given and not the head of the linked list.
+- Use a simple approach of simply copying the value of the next node in the give node and pointing to the next of the next node.
