@@ -15,17 +15,18 @@ public class LevelOrder_Traversal_Iterative {
         }
     }
 
-    private static List<Integer> performLevelOrder(Node root){
-        List<Integer> nodeList = new ArrayList<>();
+    private static List<List<Integer>> performLevelOrder(Node root){
+        List<List<Integer>> nodeList = new ArrayList<>();
         // perform level order using queue
         Queue<Node> nodeQ = new ArrayDeque<>();
         // Add root by default into the nodeq
         nodeQ.add(root);
         while(nodeQ.size() > 0){
             int size = nodeQ.size();
+            ArrayList<Integer> result = new ArrayList<>();
             while(size -- > 0){
                 Node current = nodeQ.remove();
-                nodeList.add(current.data);
+                result.add(current.data);
                 if(current.left != null){
                     nodeQ.add(current.left);
                 }
@@ -33,6 +34,7 @@ public class LevelOrder_Traversal_Iterative {
                     nodeQ.add(current.right);
                 }
             }
+            nodeList.add(result);
         }
         return nodeList;
     }
@@ -55,7 +57,10 @@ public class LevelOrder_Traversal_Iterative {
         right.left = rightLeft;
         right.right = rightRight;
 
-        List<Integer> nodeList =  performLevelOrder(root);
-        System.out.println(nodeList);
+        List<List<Integer>> nodeList =  performLevelOrder(root);
+
+        for(List<Integer> levels: nodeList){
+            System.out.println(levels);
+        }
     }
 }
