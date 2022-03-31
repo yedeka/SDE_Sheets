@@ -2,7 +2,7 @@ package com.tuf.days.day17.binaryTrees;
 
 import java.util.*;
 
-public class PreOrder_One_Stack {
+public class PostOrder_One_Stack {
     private static class Node{
         int data;
         Node left;
