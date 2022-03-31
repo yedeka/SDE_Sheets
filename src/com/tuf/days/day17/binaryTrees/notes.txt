@@ -3,3 +3,4 @@
 3] Iterative postorder 1 stack
 4] PreOrder, Inorder and PostOrder traversals of tree
 5] Level order traversal
+6] Maximum depth of binary tree
