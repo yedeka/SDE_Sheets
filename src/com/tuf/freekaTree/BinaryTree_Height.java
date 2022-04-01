@@ -1,4 +1,4 @@
-package com.tuf.days.day17.binaryTrees;
+package com.tuf.freekaTree;
 
 public class BinaryTree_Height {
     private static class Node{
