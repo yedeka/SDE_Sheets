@@ -20,7 +20,7 @@ public class Check_Balanced_Binary_Tree {
         if(Math.abs(leftVal - rightVal) > 1){
             return -1;
         }
-        return leftVal-rightVal + 1;
+        return Math.max(leftVal, rightVal) + 1;
     }
 
     public static void main(String[] args){
