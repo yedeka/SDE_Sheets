@@ -1,4 +1,4 @@
-package com.tuf.days.day17.binaryTrees;
+package com.tuf.freekaTree;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;

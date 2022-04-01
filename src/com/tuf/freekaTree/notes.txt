@@ -4,3 +4,4 @@
 4] PreOrder, Inorder and PostOrder traversals of tree
 5] Level order traversal
 6] Maximum depth of binary tree
+7] Check for balanced binary tree
