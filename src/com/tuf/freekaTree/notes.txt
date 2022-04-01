@@ -5,3 +5,4 @@
 5] Level order traversal
 6] Maximum depth of binary tree
 7] Check for balanced binary tree
+8] Diameter of binary tree.
