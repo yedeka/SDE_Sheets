@@ -4,5 +4,9 @@
 4] PreOrder, Inorder and PostOrder traversals of tree
 5] Level order traversal
 6] Maximum depth of binary tree
-7] Check for balanced binary tree
-8] Diameter of binary tree.
+7] Check for balanced binary tree - Based on height of tree
+8] Diameter of binary tree. - Based on height of tree
+9] Max depth sum. - Based on height of tree
+10] Are trees identicle - based on traversal.
+11] Zig zag traversal. - Level order with a flag to put left first or right.
+12]
