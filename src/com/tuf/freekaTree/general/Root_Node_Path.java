@@ -50,7 +50,6 @@ public class Root_Node_Path {
         List<Integer> rootNodeList = new ArrayList<>();
         findRootToNodePath(root, rootNodeList, 7);
         System.out.println(rootNodeList);
-
     }
 
 }
