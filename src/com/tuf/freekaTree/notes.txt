@@ -10,3 +10,5 @@
 10] Are trees identicle - based on traversal.
 11] Zig zag traversal. - Level order with a flag to put left first or right.
 12] Boundary traversal in a binary tree.
+13] Right/Left view of Binary tree.
+14] Symmetrical Binary Tree.
