@@ -1,4 +1,4 @@
-package com.tuf.freekaTree.notes;
+package com.tuf.freekaTree.height_based;
 
 public class Max_Path_Sum {
     private static class Node{
