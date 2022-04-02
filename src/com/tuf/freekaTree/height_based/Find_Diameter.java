@@ -1,4 +1,4 @@
-package com.tuf.freekaTree;
+package com.tuf.freekaTree.height_based;
 
 public class Find_Diameter {
     private static class Node{

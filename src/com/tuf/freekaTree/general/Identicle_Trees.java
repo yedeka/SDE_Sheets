@@ -1,4 +1,4 @@
-package com.tuf.freekaTree;
+package com.tuf.freekaTree.general;
 
 public class Identicle_Trees {
     private static class Node{

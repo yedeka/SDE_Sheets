@@ -1,4 +1,4 @@
-package com.tuf.freekaTree;
+package com.tuf.freekaTree.height_based;
 
 public class Check_Balanced_Binary_Tree {
     private static class Node{
