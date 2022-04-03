@@ -19,4 +19,5 @@
 18] Serialize a binary tree - Pepcoding
 19] Deserialize a binary tree - Pepcoding (Iterative approach using stack and levels)
 20] Children sum property. Very important complex problem.
-21] Nodes at distance K
+21] Nodes at distance K - Level order traversal approach of running 2 loops.
+22] Burning a binary tree - Level order traversal with parent pointers calculation.
