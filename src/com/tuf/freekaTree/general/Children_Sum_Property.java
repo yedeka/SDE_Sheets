@@ -35,10 +35,14 @@ public class Children_Sum_Property {
                 root.right.data = root.data;
             }
         }
-        adhereChildrenSum(root.left);
-        adhereChildrenSum(root.right);
-        // After the subtrees are processed again set the parent value to complete the process
-        root.data = root.left.data + root.right.data;
+        if(root.left != null){
+            adhereChildrenSum(root.left);
+            root.data += root.left.data;
+        }
+        if(root.right != null){
+            adhereChildrenSum(root.right);
+            root.data += root.right.data;
+        }
     }
 
     public static void main(String[] args){
