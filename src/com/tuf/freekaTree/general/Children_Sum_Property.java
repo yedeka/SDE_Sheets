@@ -12,6 +12,9 @@ public class Children_Sum_Property {
     }
 
     private static void adhereChildrenSum(Node root){
+        if(root == null){// Written to handle the negative values
+            return;
+        }
         int sum = 0;
         if(root.left != null){
             sum += root.left.data;
@@ -25,8 +28,12 @@ public class Children_Sum_Property {
         if(sum > root.data){
             root.data = sum;
         } else {
-            root.left.data = root.data;
-            root.right.data = root.data;
+            if(root.left != null){
+                root.left.data = root.data;
+            }
+            if(root.right != null){
+                root.right.data = root.data;
+            }
         }
         adhereChildrenSum(root.left);
         adhereChildrenSum(root.right);
