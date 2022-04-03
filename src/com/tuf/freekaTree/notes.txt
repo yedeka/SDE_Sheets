@@ -13,3 +13,6 @@
 13] Right/Left view of Binary tree.
 14] Symmetrical Binary Tree.
 15] Root to node path.
+=============================================================================
+16] Width of shadow of a binary tree. - Pepcoding
+17] Width of a binary tree. - Pepcoding
