@@ -21,3 +21,5 @@
 20] Children sum property. Very important complex problem.
 21] Nodes at distance K - Level order traversal approach of running 2 loops.
 22] Burning a binary tree - Level order traversal with parent pointers calculation.
+23] Preparing a binary tree from Inorder and Pre-order.
+24] Preparing a binary tree from Inorder and Post-order.
