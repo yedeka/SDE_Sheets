@@ -15,6 +15,10 @@ public class Unique_Binary_Tree_Inorder_PostOrder {
     }
 
     private static Node createBinaryTree(int[] inOrder, int[] postOrder){
+        // Input validation
+        if(inOrder == null || inOrder.length == 0 || postOrder == null || postOrder.length == 0 || inOrder.length != postOrder.length) {
+            return null;
+        }
         // Step 1 - Create a node map
         HashMap<Integer, Integer> nodeIndexMap = new HashMap<>();
         for(int i=0; i<inOrder.length; i++){
