@@ -24,3 +24,5 @@
 23] Preparing a binary tree from Inorder and Pre-order.
 24] Preparing a binary tree from Inorder and Post-order.
 25] Morris_Traversal - Preorder, Postorder.
+26] Flatten Binary Tree to Linked List - Recursive approach - TC => O(N), SC => O(N)
+26 a] Flatten Binary Tree to Linked List - Iterative approach using stack - TC => O(N), SC => O(N)
