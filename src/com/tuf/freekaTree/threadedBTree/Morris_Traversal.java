@@ -1,8 +1,8 @@
-package com.tuf.freekaTree.traversal;
+package com.tuf.freekaTree.threadedBTree;
 
 import java.util.*;
 
-public class Morris_Inorder_Traversal {
+public class Morris_Traversal {
     private static class Node{
         int data;
         Node left;
