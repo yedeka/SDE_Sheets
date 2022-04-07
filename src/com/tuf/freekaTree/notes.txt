@@ -28,4 +28,5 @@
 26 a] Flatten Binary Tree to Linked List - Iterative approach using stack - TC => O(N), SC => O(N)
 26 b] Flatten Binary Tree to Linked List - Iterative approach using Morris Order traversal - TC => O(N), SC => O(1)
 =============================================================================
-27] Cameras in binary Tree - Pepcoding
+27] Cameras in binary Tree - (LC968 - https://leetcode.com/problems/binary-tree-cameras/) Pepcoding
+28] House robber in binary tree - ( LC337 - https://leetcode.com/problems/house-robber-iii/)
