@@ -45,7 +45,7 @@ public class isvalidBST_Morris_traversal {
     public static void main(String[] args){
         Node root = new Node(30);
         Node left = new Node(15);
-        Node right = new Node(60);
+        Node right = new Node(45);
         root.left = left;
         root.right = right;
         Node leftLeft1 = new Node(7);
