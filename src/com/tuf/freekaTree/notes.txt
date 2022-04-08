@@ -33,3 +33,4 @@
 29] Longest zig zag path in binary tree - (LC1372 - https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/) Pepcoding
 30] Is Valid BST - Using Inorder - Pepcoding (LC98 - https://leetcode.com/problems/validate-binary-search-tree/)
 31] Recover Binary Tree - Using Morris traversal - Pepcoding (LC99 - https://leetcode.com/problems/recover-binary-search-tree/)
+32] Construct a binary tree from in order and level order
