@@ -2,7 +2,7 @@ package com.tuf.freekaTree.traversal;
 
 import java.util.HashSet;
 
-public class Binary_Tree_Inorder_Levelorder {
+public class Unique_Binary_Tree_Inorder_Levelorder {
     private static class Node{
         int data;
         Node left;
