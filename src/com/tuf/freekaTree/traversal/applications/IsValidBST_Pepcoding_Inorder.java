@@ -15,16 +15,16 @@ public class IsValidBST_Pepcoding_Inorder {
         if(root == null){
             return true;
         }
-        boolean isLeftBST = isValidBST(root.left, prev);
+        if(!isValidBST(root.left, prev)) return false;
         // Work in inorder area
         Node prevPtr = prev[0];
-        if(prevPtr == null || prevPtr.data < root.data){
-            prev[0] = root;
-        } else {
+        if(prevPtr != null && prevPtr.data > root.data){
             return false;
+        } else {
+            prev[0] = root;
         }
-        boolean isRightBST = isValidBST(root.right, prev);
-        return isLeftBST && isRightBST;
+        if(!isValidBST(root.right, prev)) return false;
+        return true;
     }
 
     public static void main(String[] args){
