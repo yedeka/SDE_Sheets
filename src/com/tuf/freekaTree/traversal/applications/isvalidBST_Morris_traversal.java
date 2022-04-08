@@ -29,7 +29,7 @@ public class isvalidBST_Morris_traversal {
                     left.right = current;
                     current = current.left;// Thread is created hence move to next left node for subsequent thread creation.
                 }
-                if(left.right == current){
+                if(left.right == current){ // We are backtracking from parent hence again check
                     if(prev.data > current.data){
                         return false;
                     }
