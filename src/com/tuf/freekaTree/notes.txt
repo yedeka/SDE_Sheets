@@ -31,3 +31,4 @@
 27] Cameras in binary Tree - (LC968 - https://leetcode.com/problems/binary-tree-cameras/) Pepcoding
 28] House robber in binary tree - ( LC337 - https://leetcode.com/problems/house-robber-iii/) Pepcoding
 29] Longest zig zag path in binary tree - (LC1372 - https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/) Pepcoding
+30] Is Valid BST - Using Inorder - Pepcoding (LC98 - https://leetcode.com/problems/validate-binary-search-tree/)
