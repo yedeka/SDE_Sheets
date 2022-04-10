@@ -20,16 +20,11 @@ public class Diagonal_Traversal {
         }
         Queue<Node> nodeQ = new ArrayDeque<>();
         nodeQ.add(root);
-        boolean firstFlag = true;
-        ArrayList<Integer> diagonal = null;
         while(nodeQ.size() > 0){
             int size = nodeQ.size();
+            ArrayList<Integer> diagonal = new ArrayList<>();
             while(size -- > 0){
                 Node current = nodeQ.remove();
-                if(firstFlag){
-                    diagonal = new ArrayList<>();
-                    firstFlag = !firstFlag;
-                }
                 while(current != null){
                     diagonal.add(current.data);
                     if(current.left != null){
@@ -39,7 +34,6 @@ public class Diagonal_Traversal {
                 }
             }
             result.add(diagonal);
-            firstFlag = true;
         }
         return result;
     }
