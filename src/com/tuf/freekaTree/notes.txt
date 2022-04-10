@@ -34,4 +34,5 @@
 30] Is Valid BST - Using Inorder - Pepcoding (LC98 - https://leetcode.com/problems/validate-binary-search-tree/)
 31] Recover Binary Tree - Using Morris traversal - Pepcoding (LC99 - https://leetcode.com/problems/recover-binary-search-tree/)
 32] Construct a binary tree from in order and level order
-33] Serialize and deserialize a n-ary tree -
+33] Serialize and deserialize a n-ary tree - (LC428 - https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)
+34] Verticle Order of binary tree - Method II
