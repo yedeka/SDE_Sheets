@@ -37,3 +37,4 @@
 33] Serialize and deserialize a n-ary tree - (LC428 - https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree/)
 34] Verticle Order of binary tree - Method II
 35] Diagonal order traversal of binary tree.
+36] Diagonal order traversal anticlockwise.
