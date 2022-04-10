@@ -1,1 +1,4 @@
-1] Construct BST from Inorder.
+1] Construct BST from Inorder.(Find root using mid of array each time)
+2] Construct BST from PreOrder.(Iterate over array using ranges)
+3] Construct BST from PostOrder.(Iterate over array using ranges from reverse side)
+4] Construct BSt from Levelorder. (Use queue with ranges)
