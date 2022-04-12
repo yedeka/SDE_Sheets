@@ -1,4 +1,4 @@
-package com.tuf.freekaTree;
+package com.tuf.freekaTree.traversal;
 
 import java.util.ArrayList;
 
