@@ -39,3 +39,5 @@
 35] Diagonal order traversal of binary tree. - Pepcoding
 36] Diagonal order traversal anticlockwise. - Pepcoding
 37] Verticle Order sum iterative - GFG (https://www.geeksforgeeks.org/vertical-sum-in-a-given-binary-tree/)
+38] Verticle Order II - Sort the elements in ascending order at same horizontal level.(LC987 - https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)
+39] Diagonal Order Sum - Pepcoding
