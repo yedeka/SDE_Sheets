@@ -1,6 +1,6 @@
 package com.tuf.freekaTree.traversal;
 
-public class Binary_Tree_Iterator_Morris_Traversal {
+public class Binary_Search_Tree_Iterator_Morris_Traversal {
     private static class Node {
         int data;
         Node left;

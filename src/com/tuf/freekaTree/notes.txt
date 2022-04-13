@@ -42,3 +42,6 @@
 38] Verticle Order II - Sort the elements in ascending order at same horizontal level.(LC987 - https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/)
 39] Diagonal Order Sum - Pepcoding
 40] Diagonal Order Sum - BFS - Pepcoding
+41] Binary Search Tree Iterator - Morris Traversal (LC173 - https://leetcode.com/problems/binary-search-tree-iterator/)
+42] BST Iterator - Stack method.
+
