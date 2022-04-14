@@ -14,7 +14,7 @@ public class Nodes_K_Distance_Space_Optimized {
     }
 
     private static void addNodesAtDistanceK(Node root, Node blocker, int k, ArrayList<Integer> result){
-        if(root == null || k < 0){
+        if(root == null || root == blocker){
             return;
         }
         if(k == 0){
