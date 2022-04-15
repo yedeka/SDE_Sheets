@@ -49,3 +49,4 @@
 45] Nodes at k distance using DFS traversal - Non optimal - Pepcoding (Check in traversal package)
 46] Nodes at k space optimized - Simply calculate distance while calculating root to node path using 2 recursive calls thus making the tume complexity to be 2n.
 47] Burning binary tree - Use the root to node path kind of technique.
+48] Convert BST into sorted doubly linked list - Using DFS 1st iteration
