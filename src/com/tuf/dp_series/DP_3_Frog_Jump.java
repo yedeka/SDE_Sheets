@@ -24,7 +24,6 @@ public class DP_3_Frog_Jump {
         dp[1] = Math.abs(energy[1] - energy[0]);
 
         for(int i=2; i<=n; i++){
-            int left =
             dp[i] = Math.min(dp[i-1] + Math.abs(energy[i] - energy[i-1]),  dp[i-2] + Math.abs(energy[i] - energy[i-2]));
         }
         return dp[n];
