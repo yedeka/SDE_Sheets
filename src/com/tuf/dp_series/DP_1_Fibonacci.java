@@ -25,9 +25,25 @@ public class DP_1_Fibonacci {
         return dp[n];
     }
 
+    // TC - O(N)
+    // SC - O(1)
+    private static int tabulation_fib_spaceOptimized(int n){
+        int secondPrev = 0;
+        int prev = 1;
+        for(int i=2; i<=n; i++){// Resembles the recursive call
+            int current = secondPrev + prev;
+            secondPrev = prev;
+            prev = current;
+        }
+        return prev;
+    }
+
+
+
     public static void main(String[] args){
         int n = 5;
         System.out.println("Fibonacci by memoization => "+memoization_fib(n, new int[n+1]));
         System.out.println("Fibonacci by tabulation => "+tabulation_fib(n));
+        System.out.println("Fibonacci by tabulation space optimized => "+tabulation_fib_spaceOptimized(n));
     }
 }
