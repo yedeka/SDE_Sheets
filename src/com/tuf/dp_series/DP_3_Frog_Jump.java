@@ -16,11 +16,38 @@ public class DP_3_Frog_Jump {
            total = Math.min(total, findMinEnergy_memoized(n-2, energy, dp) + Math.abs(energy[n] - energy[n-2]));
         }
         return dp[n] = total;
-
     }
+
+    private static int findMinEnergy_tabulation(int n, int[] energy){
+        int[] dp = new int[n+1];
+        dp[0] = 0;
+        dp[1] = Math.abs(energy[1] - energy[0]);
+
+        for(int i=2; i<=n; i++){
+            int left =
+            dp[i] = Math.min(dp[i-1] + Math.abs(energy[i] - energy[i-1]),  dp[i-2] + Math.abs(energy[i] - energy[i-2]));
+        }
+        return dp[n];
+    }
+
+    private static int findMinEnergy_tabulation_optimized(int n, int[] energy){
+        int secondPrev = 0;
+        int prev = Math.abs(energy[1] - energy[0]);
+
+        for(int i=2; i<=n; i++){
+            int current = Math.min(prev + Math.abs(energy[i-1] - energy[i]), secondPrev + Math.abs(energy[i-2] - energy[i]));
+            secondPrev = prev;
+            prev = current;
+        }
+        return prev;
+    }
+
+
     public static void main(String[] args){
         int n = 3;
         int[] energy = new int[]{10, 20, 30, 10};
-        System.out.println("Minimum energy to climb "+n+" stairs => "+findMinEnergy_memoized(n, energy, new int[n+1]));
+        System.out.println("Minimum energy to climb "+n+" stairs memoization => "+findMinEnergy_memoized(n, energy, new int[n+1]));
+        System.out.println("Minimum energy to climb "+n+" stairs tabulation => "+findMinEnergy_tabulation(n, energy));
+        System.out.println("Minimum energy to climb "+n+" stairs tabulation optimized => "+findMinEnergy_tabulation_optimized(n, energy));
     }
 }
