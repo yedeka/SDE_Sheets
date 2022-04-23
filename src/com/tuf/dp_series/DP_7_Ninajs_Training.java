@@ -68,6 +68,30 @@ public class DP_7_Ninajs_Training {
         return dp[tasks.length-1][tasks[0].length];
     }
 
+    private static int findMaxRewards_tabulation_space_optimization(int[][] tasks){
+        int[] dp = new int[tasks[0].length + 1];
+        // Write base case
+        dp[0] = Math.max(tasks[0][1], tasks[0][2]);
+        dp[1] = Math.max(tasks[0][0], tasks[0][2]);
+        dp[2] = Math.max(tasks[0][0], tasks[0][1]);
+        dp[3] = Math.max(Math.max(tasks[0][0], tasks[0][1]), tasks[0][2]);
+
+        for(int i=1; i<tasks.length; i++){
+            int[] current = new int[tasks[0].length + 1];
+            for(int prev=0; prev < 4; prev++){
+
+                current[prev] = 0;
+                for(int task = 0; task<=2; task++){
+                    if(task != prev){
+                        current[prev] = Math.max(current[prev], tasks[i][task] + dp[task]);
+                    }
+                }
+            }
+            dp = current;
+        }
+        return dp[3];
+    }
+
 
 
     private static int findMaxRewards(int[][] tasks){
@@ -86,5 +110,6 @@ public class DP_7_Ninajs_Training {
         System.out.println("Maximum reward from action => "+findMaxRewards(training_tasks));
         System.out.println("Maximum reward from action memoized => "+findMaxRewards_memoized(training_tasks));
         System.out.println("Maximum reward from action tabulated => "+ findMaxRewards_tabulation(training_tasks));
+        System.out.println("Maximum reward from action tabulated space optimized => "+ findMaxRewards_tabulation_space_optimization(training_tasks));
     }
 }
