@@ -1,4 +1,4 @@
-package com.tuf.dp_series;
+package com.tuf.dp_series.grids.fix_starting_ending_point;
 
 import java.util.Arrays;
 

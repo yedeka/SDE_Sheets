@@ -1,4 +1,4 @@
-package com.tuf.dp_series;
+package com.tuf.dp_series.grids.fix_starting_variable_ending;
 
 import java.util.Collections;
 import java.util.List;
