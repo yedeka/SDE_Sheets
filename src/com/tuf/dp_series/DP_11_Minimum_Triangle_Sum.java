@@ -63,6 +63,28 @@ public class DP_11_Minimum_Triangle_Sum {
         return dp.get(0).get(0);
     }
 
+    private static int findMinTriangleSum_Tabulation_Optimized(List<List<Integer>> triangle){
+
+        // Step 1 - Populate last row of DP array with the triangle list values itself.
+        int n = triangle.get(triangle.size() - 1).size();
+        List<Integer> dp = new ArrayList<>();
+        for(Integer element: triangle.get(n-1)){
+            dp.add(element);
+        }
+
+        // Step 2 - Now run the DP in bottom up fashion from n-2 .... 0 to get the minimum triangle sum
+        for(int i= n-2; i>=0; i--){
+            ArrayList<Integer> temp = new ArrayList<>();
+            for(int j=0; j<dp.size()-1; j++){
+                int existingValue = triangle.get(i).get(j);
+                int minValue = Math.min(dp.get(j), dp.get(j+1));
+                temp.add(existingValue + minValue);
+            }
+            dp = temp;
+        }
+        return dp.get(0);
+    }
+
     public static void main(String[] args){
         List<List<Integer>> triangle = new ArrayList<>();
         int n = 4;
@@ -83,5 +105,6 @@ public class DP_11_Minimum_Triangle_Sum {
         System.out.println("Minimum triangle sum recursive => "+findMinTriangleSum(triangle, false));
         System.out.println("Minimum triangle sum memoization => "+findMinTriangleSum(triangle, true));
         System.out.println("Minimum triangle sum tabulation => "+findMinTriangleSum_Tabulation(triangle));
+        System.out.println("Minimum triangle sum tabulation space optimization => "+findMinTriangleSum_Tabulation_Optimized(triangle));
     }
 }
