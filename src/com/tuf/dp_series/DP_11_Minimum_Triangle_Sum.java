@@ -54,7 +54,7 @@ public class DP_11_Minimum_Triangle_Sum {
         dp.set(n-1,triangle.get(n-1));
         // Step 2 - Now run the DP in bottom up fashion from n-2 .... 0 to get the minimum triangle sum
         for(int i= n-2; i>=0; i--){
-            for(int j=0; j<dp.get(i).size(); j++){
+            for(int j=i; j>=0; j--){
                 int existingValue = triangle.get(i).get(j);
                 int minValue = Math.min(dp.get(i+1).get(j), dp.get(i+1).get(j+1));
                 dp.get(i).set(j, existingValue + minValue);
