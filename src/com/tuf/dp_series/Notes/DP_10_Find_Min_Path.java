@@ -48,13 +48,69 @@ public class DP_10_Find_Min_Path {
             }
             return minPathRecursive_Memoized(n-1, m-1, grid, dp);
         }
-
     }
+
+    private static int minPathSum_Tabulation(int[][] grid){
+        int n = grid.length, m = grid[0].length;
+        int[][] dp = new int[n][m];
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                if(i == 0 && j == 0){
+                    dp[i][j] = grid[i][j];
+                    continue;
+                }
+                int leftSum = grid[i][j], topSum = grid[i][j];
+                if(i > 0){
+                    topSum += dp[i-1][j];
+                } else {
+                    topSum += (int)Math.pow(10,9);
+                }
+                if(j > 0){
+                    leftSum += dp[i][j-1];
+                }else {
+                    leftSum += (int)Math.pow(10,9);
+                }
+                dp[i][j] = Math.min(leftSum, topSum);
+            }
+        }
+        return dp[n-1][m-1];
+    }
+
+    private static int minPathSum_Tabulation_spaceOptmized(int[][] grid){
+        int n = grid.length, m = grid[0].length;
+        int[] dp = new int[m];
+        for(int i=0; i<n; i++){
+            int[] temp = new int[m];
+            for(int j=0; j<m; j++){
+                if(i == 0 && j == 0){
+                    temp[j] = grid[i][j];
+                    continue;
+                }
+                int leftSum = grid[i][j], topSum = grid[i][j];
+                if(i > 0){
+                    topSum += dp[j];
+                } else {
+                    topSum += (int)Math.pow(10,9);
+                }
+                if(j > 0){
+                    leftSum += temp[j-1];
+                }else {
+                    leftSum += (int)Math.pow(10,9);
+                }
+                temp[j] = Math.min(leftSum, topSum);
+            }
+            dp = temp;
+        }
+        return dp[m-1];
+    }
+
     public static void main(String[] args){
         int[][] maze = new int[][]{
                 {5, 9, 6}, {11, 5, 2}
         };
         System.out.println("Minimum Path Sum recursive => "+minPathSumRecursive(maze, true));
         System.out.println("Minimum Path Sum recursive memoized => "+minPathSumRecursive(maze, false));
+        System.out.println("Minimum Path Sum Tabulation => "+minPathSum_Tabulation(maze));
+        System.out.println("Minimum Path Sum Tabulation space optimized => "+minPathSum_Tabulation_spaceOptmized(maze));
     }
 }
