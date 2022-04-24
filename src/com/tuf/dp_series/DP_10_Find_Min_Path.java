@@ -1,4 +1,4 @@
-package com.tuf.dp_series.Notes;
+package com.tuf.dp_series;
 
 import java.util.Arrays;
 
