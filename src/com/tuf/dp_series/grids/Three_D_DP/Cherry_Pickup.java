@@ -82,6 +82,49 @@ public class Cherry_Pickup {
         }
 
     }
+
+    private static int findMaxCherry_Tabulation(int[][] grid){
+        int n= grid.length, m = grid[0].length;
+        int[][][] dp = new int[n][m][m];
+        // Handle the base case here
+        for(int i=0; i<m; i++){
+            for(int j=0; j<m; j++){
+                if(i == j){
+                    dp[n-1][i][j] = grid[n-1][i];
+                } else {
+                    dp[n-1][i][j] = grid[n-1][i] + grid[n-1][j];
+                }
+            }
+        }
+        // Now handle the nested loop
+        for(int i=n-2; i>=0; i--){
+            for(int j1= 0; j1< m; j1++){
+                for(int j2=0; j2<m; j2++){
+                    int maxSum = Integer.MIN_VALUE;
+                    for(int a=-1; a<=1; a++){
+                        for(int b=-1; b<=1; b++){
+                            int value = 0;
+                            if(j1 == j2){
+                                value = grid[i][j1];
+                            } else {
+                                value = grid[i][j1] + grid[i][j2];
+                            }
+                            if(j1+a >=0 && j1+a < m && j2+b >=0 && j2+b < m){
+                                value += dp[i+1][j1+a][j2+b];
+                            } else {
+                                value += (int)Math.pow(10, -8);
+                            }
+                            maxSum = Math.max(maxSum, value);
+                        }
+                    }
+                    dp[i][j1][j2] = maxSum;
+                }
+            }
+        }
+        return dp[0][0][m-1];
+
+    }
+
     public static void main(String[] args){
         int[][] grid = new int[][]{
                 {2, 3, 1, 2},
@@ -90,5 +133,6 @@ public class Cherry_Pickup {
         };
         System.out.println("Maximum cherry pickup recursive => "+findMaxCherry(grid, true));
         System.out.println("Maximum cherry pickup recursive memoized => "+findMaxCherry(grid, false));
+        System.out.println("Maximum cherry pickup tabulation => "+findMaxCherry_Tabulation(grid));
     }
 }
