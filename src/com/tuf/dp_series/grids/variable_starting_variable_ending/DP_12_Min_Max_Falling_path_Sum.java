@@ -85,8 +85,6 @@ public class DP_12_Min_Max_Falling_path_Sum {
         return rowMax;
     }
 
-
-
     private static int findMaxFallingSum(int[][] input, boolean recursiveFlag){
         int n= input.length, m = input[0].length;
         if(recursiveFlag){
