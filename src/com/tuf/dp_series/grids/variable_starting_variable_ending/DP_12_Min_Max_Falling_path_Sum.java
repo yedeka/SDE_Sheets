@@ -34,6 +34,59 @@ public class DP_12_Min_Max_Falling_path_Sum {
         return dp[i][j] = Math.max(rd, Math.max(up, ld));
     }
 
+    private static int findFallingPathSumRecursive_tabulation(int[][]input){
+        int[][] dp = new int[input.length][input[0].length];
+        int n = input.length, m = input[0].length;
+        for(int[] row: dp){
+            Arrays.fill(row, -1);
+        }
+        dp[0] = input[0];
+        int rowMax = Integer.MIN_VALUE;
+        for(int i=1; i<n; i++){
+            int top = 0, ld = 0, rd = 0;
+            for(int j=0; j<m; j++) {
+                top = input[i][j] + dp[i - 1][j];
+                if (j > 0) {
+                    ld = input[i][j] + dp[i - 1][j - 1];
+                }
+                if (j < m - 1) {
+                    rd = input[i][j] + dp[i - 1][j + 1];
+                }
+                int localMax = Math.max(top, Math.max(ld, rd));
+                dp[i][j] = localMax;
+                rowMax = Math.max(rowMax, dp[i][j]);
+            }
+        }
+        return rowMax;
+    }
+
+    private static int findFallingPathSumRecursive_tabulation_optimized(int[][]input){
+        int[] dp = new int[input[0].length];
+        int n = input.length, m = input[0].length;
+        dp = input[0];
+        int rowMax = Integer.MIN_VALUE;
+        for(int i=1; i<n; i++){
+            int top = 0, ld = 0, rd = 0;
+            int[] temp = new int[m];
+            for(int j=0; j<m; j++) {
+                top = input[i][j] + dp[j];
+                if (j > 0) {
+                    ld = input[i][j] + dp[j - 1];
+                }
+                if (j < m - 1) {
+                    rd = input[i][j] + dp[j + 1];
+                }
+                int localMax = Math.max(top, Math.max(ld, rd));
+                temp[j] = localMax;
+                rowMax = Math.max(rowMax, temp[j]);
+            }
+            dp = temp;
+        }
+        return rowMax;
+    }
+
+
+
     private static int findMaxFallingSum(int[][] input, boolean recursiveFlag){
         int n= input.length, m = input[0].length;
         if(recursiveFlag){
@@ -65,5 +118,7 @@ public class DP_12_Min_Max_Falling_path_Sum {
         };
         System.out.println("Maximum Falling Path Sum recursive => "+findMaxFallingSum(input, true));
         System.out.println("Maximum Falling Path Sum memoized => "+findMaxFallingSum(input, false));
+        System.out.println("Maximum Falling Path Sum tabulation => "+findFallingPathSumRecursive_tabulation(input));
+        System.out.println("Maximum Falling Path Sum space optimized tabulation => "+findFallingPathSumRecursive_tabulation_optimized(input));
     }
 }
