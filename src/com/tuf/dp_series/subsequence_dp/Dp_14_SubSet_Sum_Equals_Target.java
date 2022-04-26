@@ -26,7 +26,7 @@ public class Dp_14_SubSet_Sum_Equals_Target {
             return true;
         }
         if(index == 0){
-            return nums[index] == target;
+            return nums[0] == target;
         }
         if(dp[index][target] != -1){
             return dp[index][target] == 0 ? true: false;
@@ -41,6 +41,49 @@ public class Dp_14_SubSet_Sum_Equals_Target {
         return noSelection || selection;
     }
 
+    private static boolean subsetSumEqTargetTabulation(int[] nums, int target){
+        boolean[][] dp = new boolean[nums.length][target+1];
+        // Step 1 - Handle the base case we return true if target == 0, since target is on columns we will have to iterate over all rows to make 0th column true.
+        for(int i=0; i<nums.length; i++){
+            dp[i][0] = true;
+        }
+        // Step 1 -  Second base case at index 0 make the column == target true
+        dp[0][nums[0]] = true;
+        // Step 2 - Iterate over DP array to populate recurrence relation.
+        for(int i=1; i<dp.length; i++){
+            for(int j=1; j<dp[0].length; j++){
+                boolean notTake = dp[i-1][j];
+                boolean take = false;
+                if(j >= nums[i]){
+                    take = dp[i-1][j-nums[i]];
+                    dp[i][j] = take || notTake;
+                }
+            }
+        }
+        return dp[nums.length - 1][target];
+    }
+
+    private static boolean subsetSumEqTargetTabulation_Optimized(int[] nums, int target){
+        boolean[] dp = new boolean[target+1];
+        // Step 1 - Handle the base case we return true if target == 0, since target is on columns we will have to iterate over all rows to make 0th column true.
+        dp[0] = true;
+        // Step 2 - Iterate over DP array to populate recurrence relation.
+        for(int i=1; i<nums.length; i++){
+            boolean[] temp = new boolean[target+1];
+            temp[0] = true;
+            for(int j=1; j<dp.length; j++){
+                boolean notTake = dp[j];
+                boolean take = false;
+                if(j >= nums[i]){
+                    take = dp[j-nums[i]];
+                    temp[j] = take || notTake;
+                }
+            }
+            dp = temp;
+        }
+        return dp[target];
+    }
+
     public static void main(String[] args){
         int[] nums = new int[]{2, 3, 1, 1};
         int target = 4;
@@ -52,5 +95,7 @@ public class Dp_14_SubSet_Sum_Equals_Target {
         }
         boolean isSubSetSumTarget_memoized = subsetSumEqTargetRecursive_memoized(nums, nums.length-1, target, dp);
         System.out.println("Does the array have a subset sum equal to target memoized => "+isSubSetSumTarget_memoized);
+        System.out.println("Does the array have a subset sum equal to target tabulation => "+subsetSumEqTargetTabulation(nums, target));
+        System.out.println("Does the array have a subset sum equal to target tabulation space optimized=> "+subsetSumEqTargetTabulation_Optimized(nums, target));
     }
 }
