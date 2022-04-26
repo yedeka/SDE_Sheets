@@ -2,7 +2,7 @@ package com.tuf.dp_series.subsequence_dp;
 
 import java.util.Arrays;
 
-public class Dp_14_SubSet_Sum_Equals_Target {
+public class Dp_14_Target_Sum_Subset {
     private static boolean subsetSumEqTargetRecursive(int[] nums, int index, int target){
         // Step 1 - Base Case
         if(target == 0){
