@@ -2,7 +2,7 @@ package com.tuf.dp_series.subsequence_dp;
 
 import java.util.Arrays;
 
-public class DP17_Count_Subsets_With_Target_Difference {
+public class DP17_Count_Subsets_With_Target_Sum {
     private static int count_subsets_zero_sum_recursive(int[] nums, int target, int index){
         // Base case 1 - sum == 0
         if(target == 0){
