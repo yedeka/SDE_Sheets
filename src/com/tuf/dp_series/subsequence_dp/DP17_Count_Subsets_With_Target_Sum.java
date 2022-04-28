@@ -108,6 +108,9 @@ public class DP17_Count_Subsets_With_Target_Sum {
     public static void main(String[] args){
         int[] nums = new int[]{1, 2, 2, 3};
         int target = 3;
+        nums = new int[]{0, 0, 1};
+        target = 1;
+
         System.out.println("Count of subsets with target sum recursive => "+count_subsets_zero_sum(nums, target, true));
         System.out.println("Count of subsets with target sum using memoization => "+count_subsets_zero_sum(nums, target, false));
         System.out.println("Count of subsets with target sum using tabulation => "+count_subsets_target_sum_tabulation(nums, target));
