@@ -5,14 +5,18 @@ import java.util.Arrays;
 public class DP17_Count_Subsets_With_Target_Sum {
     private static int count_subsets_zero_sum_recursive(int[] nums, int target, int index){
         // Base case 1 - sum == 0
-        if(target == 0){
+        // Uncomment this logic for constraint 0 <nums[i]<=100
+        /*if(target == 0){
             return 1;
-        }
+        }*/
         //Base case 2 - We have reached the alst element i.e. index == 0
         if(index == 0){
-            if(nums[0] == target){
+            /*if(nums[0] == target){
                 return 1;
-            }
+            }*/
+            // This logic handles 0s in elements
+            if(target == 0 && nums[0] == 0) return 2;
+            if(target == 0 || nums[0] == target) return 1;
             return 0;
         }
         // Now iterate over the array by either including or excluding the element
@@ -40,10 +44,10 @@ public class DP17_Count_Subsets_With_Target_Sum {
             return dp[index];
         }
         // Now iterate over the array by either including or excluding the element
-        int excludeElement = count_subsets_zero_sum_recursive(nums, target, index - 1);
+        int excludeElement = count_subsets_zero_sum_memoization(nums, target, index - 1, dp);
         int includeElement = 0;
         if(nums[index] <= target){
-            includeElement = count_subsets_zero_sum_recursive(nums, target-nums[index], index - 1);
+            includeElement = count_subsets_zero_sum_memoization(nums, target-nums[index], index - 1, dp);
         }
         return dp[index] = excludeElement + includeElement;
     }
@@ -108,8 +112,9 @@ public class DP17_Count_Subsets_With_Target_Sum {
     public static void main(String[] args){
         int[] nums = new int[]{1, 2, 2, 3};
         int target = 3;
-        nums = new int[]{0, 0, 1};
-        target = 1;
+        //nums = new int[]{1, 2, 0, 3};
+        /*nums = new int[]{0, 0, 1};
+        target = 1;*/
 
         System.out.println("Count of subsets with target sum recursive => "+count_subsets_zero_sum(nums, target, true));
         System.out.println("Count of subsets with target sum using memoization => "+count_subsets_zero_sum(nums, target, false));
