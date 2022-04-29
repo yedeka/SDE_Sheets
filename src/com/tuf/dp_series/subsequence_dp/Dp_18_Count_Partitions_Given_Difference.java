@@ -57,6 +57,7 @@ public class Dp_18_Count_Partitions_Given_Difference {
         for(int element: nums){
             totalSum += element;
         }
+        if(totalSum - diff < 0 || (totalSum -diff) % 2 == 1) return -1;
         targetSum = (totalSum - diff)/2;
         int[][] dp = new int[n][targetSum + 1];
         // Handle Base cases
